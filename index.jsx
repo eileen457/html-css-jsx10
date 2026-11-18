@@ -9,12 +9,12 @@ export function EventRSVPForm() {
   const [submitted, setSubmitted] = useState(false);
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const isEmailValid = emailRegex.test(submitted.email);
+  const isEmailValid = submitted ? emailRegex.test(submitted.email) : false;
 
-  const attendeesNum = Number(submitted.atendees);
-  const isAtendeesValid = submitted.atendees !== "" && attendeesNum >= 1 && attendeesNum <= 20;
+  const attendeesNum = submitted ? Number(submitted.atendees) : 0;
+  const isAtendeesValid = submitted ? submitted.atendees !== "" && attendeesNum >= 1 && attendeesNum <= 20 : false;
 
-  const isDietaryProvided = submitted.dietary.trim() !== "";
+  const isDietaryProvided = submitted ? submitted.dietary.trim() !== "" : false;
 
   function handleSubmit(e) {
     e.preventDefault();
