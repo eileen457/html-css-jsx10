@@ -11,7 +11,7 @@ export function EventRSVPForm() {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const isEmailValid = emailRegex.test(submitted.email);
 
-  const attendeesNum = Number(atendees);
+  const attendeesNum = Number(submitted.atendees);
   const isAtendeesValid = submitted.atendees !== "" && attendeesNum >= 1 && attendeesNum <= 20;
 
   const isDietaryProvided = submitted.dietary.trim() !== "";
