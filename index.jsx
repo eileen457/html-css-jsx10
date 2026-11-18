@@ -50,14 +50,14 @@ export function EventRSVPForm() {
     
       <div> 
         <p>RSVP Submitted!</p>
-        <p>Name: {name}</p>
-        <p>Email: {email}</p>
+        <p>Name: {submitted.name}</p>
+        <p>Email: {submitted.email}</p>
         <p>Email is {isEmailValid ? "valid" : "invalid"}</p>
-        <p>Number of attendees: {atendees}</p>
+        <p>Number of attendees: {submitted.atendees}</p>
         <p>Number of attendees is {isAtendeesValid ? "valid" : "invalid"}</p>
-        <p>Dietary preferences: {dietary ? dietary : "None"}</p>
+        <p>Dietary preferences: {submitted.dietary ? submitted.dietary : "None"}</p>
         <p>Dietary preferences {isDietaryProvided ? "provided" : "not provided"}</p>
-        <p>Bringing additional guests: {bringing ? "Yes" : "No"}</p>
+        <p>Bringing additional guests: {submitted.bringing ? "Yes" : "No"}</p>
       </div>
          }
       </form>
